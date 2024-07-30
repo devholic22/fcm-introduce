@@ -1,24 +1,23 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/fcm?useSSL=false&serverTimezone=UTC&useUnicode=true&characterEncoding=utf8&allowPublicKeyRetrieval=true # 'fcm' ??? MySQL RDB? ????? ?????.
+    url: jdbc:mysql://localhost:3306/fcm?useSSL=false&serverTimezone=UTC&useUnicode=true&characterEncoding=utf8&allowPublicKeyRetrieval=true # 'fcm' 이름의 MySQL RDB를 이용합니다.
     username: root
-    password: choi1209 # ???? MySQL ????? ????? ???.
+    password: password # MySQL 비밀번호
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
-      ddl-auto: create # 'create'? ?????? ?? ? DDL? ?????.
-    show-sql: true # SQL ??? ??? ?????.
+      ddl-auto: create # 'create'는 애플리케이션 시작 시 DDL을 생성합니다.
+    show-sql: true # SQL 로그를 콘솔에 출력합니다.
     properties:
       hibernate:
-        format_sql: true # SQL? ?? ?? ?????.
-        use_sql_comments: true # SQL? ??? ?????.
-
+        format_sql: true # SQL을 보기 쉽게 포맷합니다.
+        use_sql_comments: true # SQL에 주석을 추가합니다.
   logging:
     level:
       org:
         hibernate:
-          SQL: debug # SQL ?? ?? ??? ???? ?????.
+          SQL: debug # SQL 쿼리 로그 레벨을 디버그로 설정합니다.
           type:
             descriptor:
               sql:
-                BasicBinder: trace # SQL ??? ????? ?????.
+                BasicBinder: trace # SQL 바인딩 파라미터를 로깅합니다.
